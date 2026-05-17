@@ -227,3 +227,10 @@ require("lazy").setup({
 -- 4. Последние штрихи
 vim.opt.cmdheight = 0
 vim.cmd('highlight Cmdline guibg=NONE guifg=#cdd6f4')
+
+vim.api.nvim_create_autocmd({ 'VimLeave', 'VimSuspend' }, {
+  pattern = '*',
+  callback = function()
+    vim.o.guicursor = 'a:ver25'  -- Установит тонкий Beam-курсор при выходе
+  end
+})
