@@ -118,3 +118,14 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.stack/programs/x86_64-linux/ghc-tinfo6-9.10.3/bin:$PATH"
 #export DISPLAY=:2
 export QT_QPA_PLATFORMTHEME=qt6ct
+export SSH_AUTH_SOCK="$HOME/.ssh/ssh-agent.sock"
+
+# Если агент не запущен — запускаем
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    eval "$(ssh-agent -s)" > /dev/null
+fi
+
+# Если ключ не добавлен — добавляем
+if ! ssh-add -l &>/dev/null; then
+    ssh-add ~/.ssh/id_ed25519_github 2>/dev/null
+fi
