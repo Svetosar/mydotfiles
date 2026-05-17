@@ -1,0 +1,49 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 26,
+
+    "modules-left": ["river/tags", "window"],
+    "modules-center": ["clock"],
+    "modules-right": ["cpu", "memory", "network", "bluetooth", "tray"],
+
+    "river/tags": {
+        "format": "{name}",
+        "num-tags": 6,
+        "on-click": "set-focused-tags",
+        "on-click-right": "set-view-tags",
+        "on-click-middle": "toggle-focused-tags"
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "{:%A, %d %B %Y}"
+    },
+
+    "cpu": {
+        "format": "  {usage}%"
+    },
+
+    "memory": {
+        "format": "  {}%"
+    },
+
+    "network": {
+        "format": "{signalStrength}%",
+        "format-wifi": "  {signalStrength}%",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰤮",
+        "tooltip-format": "{ifname}: {ipaddr}"
+    },
+
+    "bluetooth": {
+        "format": "",
+        "format-connected": " {num_connections}",
+        "format-disconnected": "󰂲",
+        "on-click": "blueman-manager"
+    },
+
+    "tray": {
+        "spacing": 8
+    }
+}
