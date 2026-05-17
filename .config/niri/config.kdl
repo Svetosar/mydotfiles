@@ -673,5 +673,5 @@ environment {
     GTK_USE_PORTAL "0"
     DBUS_SESSION_BUS_ADDRESS "unix:path=/run/user/1000/bus"
 }
-// prefer-no-csd
+prefer-no-csd
 spawn-at-startup "runsvdir" "-P" "/home/svetosar/.service"

@@ -35,14 +35,14 @@ require("lazy").setup({
   -- === ВИЗУАЛЬНАЯ ЧАСТЬ ===
 
   -- Самая красивая тёмная тема
-{
-  "neanias/everforest-nvim",
-  priority = 1000,
-  config = function()
-    vim.g.everforest_background = "hard" -- или "hard", "soft"
-    vim.cmd.colorscheme("everforest")
-  end,
-},
+  {
+    "neanias/everforest-nvim",
+    priority = 1000,
+    config = function()
+      vim.g.everforest_background = "hard"
+      vim.cmd.colorscheme("everforest")
+    end,
+  },
   -- Иконки для файлов (нужны для многих плагинов)
   { "nvim-tree/nvim-web-devicons", lazy = true },
 
@@ -222,15 +222,45 @@ require("lazy").setup({
       vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint)
     end
   },
+
+  -- === MARKDOWN ПЛАГИНЫ (НОВОЕ) ===
+
+  -- Предпросмотр Markdown в браузере
+  {
+    'iamcco/markdown-preview.nvim',
+    cmd = { 'MarkdownPreview', 'MarkdownPreviewStop', 'MarkdownPreviewToggle' },
+    build = 'cd app && npm install',
+    init = function()
+      vim.g.mkdp_filetypes = { 'markdown' }
+    end,
+    ft = { 'markdown' },
+  },
+
+  -- Улучшенный редактор таблиц для Markdown
+  {
+    'dhruvasagar/vim-table-mode',
+    ft = { 'markdown' },
+  },
 })
 
 -- 4. Последние штрихи
 vim.opt.cmdheight = 0
 vim.cmd('highlight Cmdline guibg=NONE guifg=#cdd6f4')
 
+-- Автоматический перенос строк для Markdown
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'markdown',
+  callback = function()
+    vim.opt_local.wrap = true
+    vim.opt_local.linebreak = true
+    vim.opt_local.conceallevel = 2
+  end,
+})
+
+-- Восстановление тонкого курсора при выходе из Neovim
 vim.api.nvim_create_autocmd({ 'VimLeave', 'VimSuspend' }, {
   pattern = '*',
   callback = function()
-    vim.o.guicursor = 'a:ver25'  -- Установит тонкий Beam-курсор при выходе
+    vim.o.guicursor = 'a:ver25'
   end
 })
