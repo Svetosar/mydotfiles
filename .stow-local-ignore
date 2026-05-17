@@ -1,0 +1,16 @@
+# Игнорировать служебные файлы Git и GitHub
+.git
+.gitignore
+.gitmodules
+README.md
+LICENSE
+
+# Игнорировать файлы самого Stow
+.stow-local-ignore
+.stow-global-ignore
+
+# Игнорировать временные и резервные копии
+.*\.swp$
+.*\.bak$
+.*\.old$
+.*~$
