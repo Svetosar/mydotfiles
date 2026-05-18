@@ -1,4 +1,5 @@
-<img width="1920" height="1079" alt="image" src="https://github.com/user-attachments/assets/b94b9008-efcb-440e-b4e5-27b8dc19a6d1" />
+<img width="1920" height="1079" alt="image" src="https://github.com/user-attachments/assets/2e1990c1-97c7-4c83-98cc-e17388ee65ec" />
+
 
 
 Это мои конфигурационные файлы для Void Linux.
