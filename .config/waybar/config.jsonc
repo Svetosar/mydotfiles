@@ -13,9 +13,12 @@
 
     "modules-right": [
         "clock",
+        "cpu",
+        "memory",
+        "pulseaudio",
         "tray",
         "network",
-        "bluetooth",
+        "bluetooth"
     ],
 
     "niri/workspaces": {
@@ -33,7 +36,8 @@
 
     "niri/window": {
         "format": "{}",
-        "max-length": 60
+        "max-length": 60,
+        "empty-text":""
     },
 
     "network": {
@@ -58,5 +62,24 @@
     "tray":{
         "spacing":10
     },
+
+
+    "cpu": {
+    "format": "󰍛 {usage}%"
+   },
+
+"memory": {
+    "format": "󰘚 {}%"
+},
+
+"pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟",
+    "format-icons": {
+        "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pavucontrol"
+},
+
 
 }

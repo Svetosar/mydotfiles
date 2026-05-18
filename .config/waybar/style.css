@@ -1,6 +1,6 @@
 * {
     font-family: "JetBrainsMono Nerd Font";
-    font-size: 14px;
+    font-size: 12px;
     min-height: 0;
 }
 
@@ -22,8 +22,8 @@ window#waybar {
 
     color: #859289;
 
-    margin: 6px 5px;
-    padding: 0 14px;
+    margin: 3px 3px;
+    padding: 0 10px;
 
     border-radius: 12px;
 
@@ -52,6 +52,7 @@ window#waybar {
 
     color: #d3c6aa;
     font-weight: bold;
+    min-width: 0;
 }
 
 /* RIGHT SIDE */
@@ -83,4 +84,42 @@ window#waybar {
     background: #4f5b58;
     color: #a7c080;
     font-weight: bold;
+}
+/* NEW MODULES */
+
+#cpu,
+#memory,
+#pulseaudio,
+#tray {
+    background: #343f44;
+
+    margin: 3px 5px;
+    padding: 0 14px;
+
+    border-radius: 12px;
+
+    color: #d3c6aa;
+
+    transition: all 0.2s ease;
+}
+
+#cpu:hover,
+#memory:hover,
+#pulseaudio:hover,
+#tray:hover {
+    background: #4f5b58;
+}
+
+/* ACCENT COLORS */
+
+#cpu {
+    color: #7fbbb3;
+}
+
+#memory {
+    color: #dbbc7f;
+}
+
+#pulseaudio {
+    color: #e69875;
 }
