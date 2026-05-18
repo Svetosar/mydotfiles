@@ -155,16 +155,34 @@ require("lazy").setup({
   },
 
   -- Дерево файлов
-  {
+ {
     'nvim-tree/nvim-tree.lua',
     version = "*",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      require("nvim-tree").setup {}
-      vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
+      -- Отключаем стандартный netrw, чтобы не было конфликтов
+      vim.g.loaded_netrw = 1
+      vim.g.loaded_netrwPlugin = 1
+
+      require("nvim-tree").setup({
+        view = {
+          width = 30,              -- ширина окна менеджера
+        },
+        renderer = {
+          group_empty = true,      -- группировать пустые папки
+        },
+        filters = {
+          dotfiles = false,        -- показывать скрытые файлы
+        },
+        actions = {
+          open_file = {
+            quit_on_open = true,   -- закрывать менеджер при открытии файла
+          },
+        },
+      })
+      vim.keymap.set('n', '<F2>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
     end,
   },
-
   -- Автодополнение
   {
     'saghen/blink.cmp',
@@ -264,3 +282,4 @@ vim.api.nvim_create_autocmd({ 'VimLeave', 'VimSuspend' }, {
     vim.o.guicursor = 'a:ver25'
   end
 })
+vim.keymap.set('n', '<Space>e', ':Telescope buffers<CR>', { noremap = true, silent = true })
