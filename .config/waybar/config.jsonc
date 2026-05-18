@@ -1,49 +1,55 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 26,
+    "height": 38,
 
-    "modules-left": ["river/tags", "window"],
-    "modules-center": ["clock"],
-    "modules-right": ["cpu", "memory", "network", "bluetooth", "tray"],
+    "modules-left": [
+        "niri/workspaces"
+    ],
 
-    "river/tags": {
-        "format": "{name}",
-        "num-tags": 6,
-        "on-click": "set-focused-tags",
-        "on-click-right": "set-view-tags",
-        "on-click-middle": "toggle-focused-tags"
+    "modules-center": [
+        "niri/window"
+    ],
+
+    "modules-right": [
+        "network",
+        "bluetooth",
+        "clock"
+    ],
+
+    "niri/workspaces": {
+        "format": "{value}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "active": "",
+            "default": ""
+        }
     },
 
-    "clock": {
-        "format": "{:%H:%M}",
-        "tooltip-format": "{:%A, %d %B %Y}"
-    },
-
-    "cpu": {
-        "format": "  {usage}%"
-    },
-
-    "memory": {
-        "format": "  {}%"
+    "niri/window": {
+        "format": "{}",
+        "max-length": 60
     },
 
     "network": {
-        "format": "{signalStrength}%",
-        "format-wifi": "  {signalStrength}%",
+        "format-wifi": "  {essid}",
         "format-ethernet": "󰈀",
-        "format-disconnected": "󰤮",
-        "tooltip-format": "{ifname}: {ipaddr}"
+        "format-disconnected": "󰖪",
+        "on-click": "nm-connection-editor"
     },
 
     "bluetooth": {
-        "format": "",
-        "format-connected": " {num_connections}",
-        "format-disconnected": "󰂲",
+        "format": "󰂯",
+        "format-connected": "󰂱",
+        "format-disabled": "",
         "on-click": "blueman-manager"
     },
 
-    "tray": {
-        "spacing": 8
+    "clock": {
+        "format": "󰥔 {:%H:%M}"
     }
 }
