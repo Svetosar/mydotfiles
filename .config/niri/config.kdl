@@ -671,6 +671,7 @@ environment {
     QT_QPA_PLATFORMTHEME "qt5ct"
     GTK_USE_PORTAL "0"
     DBUS_SESSION_BUS_ADDRESS "unix:path=/run/user/1000/bus"
+XDG_DATA_DIRS "/var/lib/flatpak/exports/share:/usr/share:/usr/local/share"
 }
 prefer-no-csd
 spawn-at-startup "runsvdir" "-P" "/home/svetosar/.service"

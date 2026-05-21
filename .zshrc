@@ -129,4 +129,3 @@ fi
 if ! ssh-add -l &>/dev/null; then
     ssh-add ~/.ssh/id_ed25519_github 2>/dev/null
 fi
-export XDG_DATA_DIRS="$XDG_DATA_DIRS:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share"
