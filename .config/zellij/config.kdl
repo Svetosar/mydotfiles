@@ -245,8 +245,8 @@ plugins {
 }
 
 // Plugins to load in the background when a new session starts
-load_plugins {
-    "zellij:link"
+// load_plugins {
+    // "zellij:link"
     // "file:/path/to/my-plugin.wasm"
     // "https://example.com/my-plugin.wasm"
 // }
@@ -461,7 +461,7 @@ theme "everforest-dark"
 //   - true (default)
 //   - false
 //
-mouse_mode false
+mouse_mode true
 
 // Configure the scroll back buffer size
 // This is the number of lines zellij stores for each pane in the scroll back
@@ -644,6 +644,6 @@ copy_command "wl-copy"                    // wayland
 // client_async_worker_tasks 4
 
 
-web_client {
-    font "monospace"
-}
+// // web_client {
+//     font "monospace"
+// }
