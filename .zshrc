@@ -111,6 +111,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ll="lsd -la"
 alias v="nvim"
+alias yu="ytfzf"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 #fastfetch
@@ -129,3 +130,4 @@ fi
 if ! ssh-add -l &>/dev/null; then
     ssh-add ~/.ssh/id_ed25519_github 2>/dev/null
 fi
+export PATH="$PATH:/usr/local/bin"

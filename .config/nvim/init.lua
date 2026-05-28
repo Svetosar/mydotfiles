@@ -283,3 +283,4 @@ vim.api.nvim_create_autocmd({ 'VimLeave', 'VimSuspend' }, {
   end
 })
 vim.keymap.set('n', '<Space>e', ':Telescope buffers<CR>', { noremap = true, silent = true })
+vim.deprecate = function() end
