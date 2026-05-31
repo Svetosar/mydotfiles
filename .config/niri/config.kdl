@@ -650,7 +650,7 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 }
-spawn-at-startup "swaybg" "-i"  "/home/svetosar/Изображения/wallpaperbetter.com_1920x1080.jpg" 
+spawn-at-startup "swaybg" "-i"  "/home/svetosar/Изображения/void-linux-wallpapes.jpg" 
 
 window-rule {
     geometry-corner-radius 12
